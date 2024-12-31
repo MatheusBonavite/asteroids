@@ -36,6 +36,8 @@ def main():
     player_shape = player.Player(constants.PLAYER_START_X, constants.PLAYER_START_Y)
     while handle_user_input():
         screen.fill(constants.SOLID_BLACK_COLOR)
+        # Update the player rotation
+        player_shape.update(dt)
         # Always re-render the player on the screen
         player_shape.draw(screen)
         pygame.display.update()
