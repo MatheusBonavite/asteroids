@@ -1,3 +1,6 @@
+# Adding pygame here just to have my groups as contants as well
+import pygame
+
 # File to hold game constants
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
@@ -17,3 +20,7 @@ PLAYER_START_X = SCREEN_WIDTH / 2
 PLAYER_START_Y = SCREEN_HEIGHT / 2
 PLAYER_TURN_SPEED = 300
 PLAYER_SPEED = 200
+
+# Creating the groups
+UPDATABLE_GROUP = pygame.sprite.Group() # objects that can be updated
+DRAWABLE_GROUP = pygame.sprite.Group() # objects that can be draw to the screen
