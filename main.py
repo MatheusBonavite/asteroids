@@ -23,9 +23,17 @@ def main():
         raise Exception("pygame was not initialized!")
     # The pygame.display.set_mode returns a Surface
     screen = pygame.display.set_mode(constants.SCREEN_TUPLE)
+    # Let's create a clock to help the game run at 60 FPS
+    # This way, we won't consume too much CPU
+    clk = pygame.time.Clock()
+    # Variable to save the delta time
+    dt = 0
+    # The delta time represent the amount of time it has passed since
+    # the last frame was drawn
     while handle_user_input():
         screen.fill(constants.SOLID_BLACK_COLOR)
         pygame.display.update()
+        dt = clk.tick(60) / 1000
 
 if __name__ == "__main__":
     main()
