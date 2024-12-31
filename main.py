@@ -1,5 +1,6 @@
 import pygame
 import constants
+import util.shapes.player as player
 
 # While this method returns True, the game loop will keep running
 def handle_user_input():
@@ -30,8 +31,13 @@ def main():
     dt = 0
     # The delta time represent the amount of time it has passed since
     # the last frame was drawn
+
+    # Instantiate a player
+    player_shape = player.Player(constants.PLAYER_START_X, constants.PLAYER_START_Y)
     while handle_user_input():
         screen.fill(constants.SOLID_BLACK_COLOR)
+        # Always re-render the player on the screen
+        player_shape.draw(screen)
         pygame.display.update()
         dt = clk.tick(60) / 1000
 
